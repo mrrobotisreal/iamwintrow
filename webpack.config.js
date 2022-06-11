@@ -10,10 +10,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(jsx|js)$/,
+        test: /\.(jsx|js)$/i,
         exclude: /node_modules/,
         loader: "babel-loader"
-      }
+      },
+      {
+        test: /\.(css)$/i,
+        use: ["style-loader", "css-loader"],
+      },
     ]
   },
   devtool: "source-map"
